@@ -31,6 +31,7 @@ async function DownloadFile(url, form, setIsProcessing) {
     setIsProcessing(true);
     showToast("info", "File download request sent.. please wait");
     const response = await axios.post(url, form, {
+      timeout: 0,
       responseType: "blob",
     });
 
